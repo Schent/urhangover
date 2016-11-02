@@ -77,8 +77,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'urhangover',
-	'USER': 'root',
-	'HOST': 'localhost',
+        'USER': 'root',
+        'HOST': 'localhost',
     }
 }
 
