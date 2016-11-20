@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'apps',
 ]
 
 MIDDLEWARE = [
@@ -78,6 +79,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'urhangover',
         'USER': 'root',
+        'PASSWORD': 'root',
         'HOST': 'localhost',
     }
 }
