@@ -6,11 +6,17 @@ from apps.usermanage.forms import *
 
 #return to homepage.
 def homepage(request):
-	return render(request,'homepage.html')
+	try:
+		text = request.session['message']
+	except:
+		text = ""
+	print ("\n\n" + text + "\n\n");
+	return render(request,'homepage.html', {"text":text})
+
+	
 
 #checking user loggin.
 def login(request):
-	username = "Invalid username or password"
     
 	if request.method == "POST":  #recive post-value and checking
 		MyLoginForm = LoginForm(request.POST)  #call function if form.py
@@ -31,7 +37,9 @@ def login(request):
 
 	MyLoginForm = LoginForm()
 	print ("invalid"); # invalid form (null)
-	return redirect('/')
+	request.session['message'] = "invalid username or paaword"
+	print (request.session['message']);
+	return homepage(request);
 
 
 
@@ -42,3 +50,36 @@ def logout(request):
 	a.active = 0
 	a.save()
 	return render(request, 'homepage.html')
+
+
+#register 
+def register(request):
+	if request.method == "POST":
+		form = RegisForm(request.POST)
+
+		if form.is_valid():
+			#get value 
+			username = request.POST.get('username')
+			password = request.POST.get('password')
+			name	 = request.POST.get('name')
+			surname  = request.POST.get('surname')
+			tel		 = request.POST.get('tel')
+			email    = request.POST.get('email')
+		
+			#check same value in db
+			try:
+				customer.objects.get(username = username)
+				request.session['message'] = "username already used"
+				#return already have this username
+			except:
+				try:
+					customer.objects.get(email = email)
+					request.session['message'] = "email already used"
+					#return already have this email
+				except:
+					a = customer(username = username, password = password, name = name, surname = surname, tel = tel, email = email);
+					a.save()
+					request.session['message'] = "registration complete"
+		else:
+			request.session['message'] = "please filled all forms"
+	return homepage(request)
