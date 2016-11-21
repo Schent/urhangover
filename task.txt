@@ -1,0 +1,6 @@
+TASK
+	return massage to homepage when invalid username & password
+	register
+		- set all require 
+		- check from db
+		- asdfasdfasdf
