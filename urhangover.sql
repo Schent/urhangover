@@ -82,7 +82,7 @@ CREATE TABLE `auth_permission` (
   PRIMARY KEY (`id`),
   UNIQUE KEY `auth_permission_content_type_id_01ab375a_uniq` (`content_type_id`,`codename`),
   CONSTRAINT `auth_permissi_content_type_id_2f476e4b_fk_django_content_type_id` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +91,7 @@ CREATE TABLE `auth_permission` (
 
 LOCK TABLES `auth_permission` WRITE;
 /*!40000 ALTER TABLE `auth_permission` DISABLE KEYS */;
-INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add user',3,'add_user'),(8,'Can change user',3,'change_user'),(9,'Can delete user',3,'delete_user'),(10,'Can add group',4,'add_group'),(11,'Can change group',4,'change_group'),(12,'Can delete group',4,'delete_group'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add customer',7,'add_customer'),(20,'Can change customer',7,'change_customer'),(21,'Can delete customer',7,'delete_customer');
+INSERT INTO `auth_permission` VALUES (1,'Can add log entry',1,'add_logentry'),(2,'Can change log entry',1,'change_logentry'),(3,'Can delete log entry',1,'delete_logentry'),(4,'Can add permission',2,'add_permission'),(5,'Can change permission',2,'change_permission'),(6,'Can delete permission',2,'delete_permission'),(7,'Can add user',3,'add_user'),(8,'Can change user',3,'change_user'),(9,'Can delete user',3,'delete_user'),(10,'Can add group',4,'add_group'),(11,'Can change group',4,'change_group'),(12,'Can delete group',4,'delete_group'),(13,'Can add content type',5,'add_contenttype'),(14,'Can change content type',5,'change_contenttype'),(15,'Can delete content type',5,'delete_contenttype'),(16,'Can add session',6,'add_session'),(17,'Can change session',6,'change_session'),(18,'Can delete session',6,'delete_session'),(19,'Can add customer',7,'add_customer'),(20,'Can change customer',7,'change_customer'),(21,'Can delete customer',7,'delete_customer'),(22,'Can add bar',8,'add_bar'),(23,'Can change bar',8,'change_bar'),(24,'Can delete bar',8,'delete_bar');
 /*!40000 ALTER TABLE `auth_permission` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -185,6 +185,32 @@ LOCK TABLES `auth_user_user_permissions` WRITE;
 UNLOCK TABLES;
 
 --
+-- Table structure for table `bar_bar`
+--
+
+DROP TABLE IF EXISTS `bar_bar`;
+/*!40101 SET @saved_cs_client     = @@character_set_client */;
+/*!40101 SET character_set_client = utf8 */;
+CREATE TABLE `bar_bar` (
+  `id` int(11) NOT NULL AUTO_INCREMENT,
+  `name` varchar(150) NOT NULL,
+  `district` varchar(100) NOT NULL,
+  `tablenum` int(11) NOT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=22 DEFAULT CHARSET=latin1;
+/*!40101 SET character_set_client = @saved_cs_client */;
+
+--
+-- Dumping data for table `bar_bar`
+--
+
+LOCK TABLES `bar_bar` WRITE;
+/*!40000 ALTER TABLE `bar_bar` DISABLE KEYS */;
+INSERT INTO `bar_bar` VALUES (1,'Bakupub','HUAYKWANG',10),(2,'The resort Club','HUAYKWANG',10),(3,'Route66 Club','HUAYKWANG',10),(4,'Slim ','HUAYKWANG',10),(5,'Snop','RATCHADA',10),(6,'Mulligan\'s Irish Pub','PHANAKORN',10),(7,'Maggie Chooâ€™s','SILOM',10),(8,'365N Pub','LADPHRAO',10),(9,'Full moon Bar','LADPHRAO',10),(10,'Saxophone','CHATUCHAK',10),(11,'Rock Pub','CHATUCHAK',10),(12,'WP wine pub','CHATUCHAK',10),(13,'The pool Pub & restaurant','BANGKHEN',10),(14,'We Bar','BANGKHEN',10),(15,'Jabalah garden view & restaurant','BANGKHEN',10),(16,'Honeymoon','BANGKHEN',10),(17,'Parlour Restaurant and Bar','BANGKAPI',10),(18,'Levels Club','WATTHANA',10),(19,'Safehouse','WATTHANA',10),(20,'Wip168','WATTHANA',10),(21,'Falabella','PHATUMWAN',10);
+/*!40000 ALTER TABLE `bar_bar` ENABLE KEYS */;
+UNLOCK TABLES;
+
+--
 -- Table structure for table `django_admin_log`
 --
 
@@ -230,7 +256,7 @@ CREATE TABLE `django_content_type` (
   `model` varchar(100) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `django_content_type_app_label_76bd3d3b_uniq` (`app_label`,`model`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -239,7 +265,7 @@ CREATE TABLE `django_content_type` (
 
 LOCK TABLES `django_content_type` WRITE;
 /*!40000 ALTER TABLE `django_content_type` DISABLE KEYS */;
-INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(4,'auth','group'),(2,'auth','permission'),(3,'auth','user'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(7,'usermanage','customer');
+INSERT INTO `django_content_type` VALUES (1,'admin','logentry'),(4,'auth','group'),(2,'auth','permission'),(3,'auth','user'),(8,'bar','bar'),(5,'contenttypes','contenttype'),(6,'sessions','session'),(7,'usermanage','customer');
 /*!40000 ALTER TABLE `django_content_type` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -256,7 +282,7 @@ CREATE TABLE `django_migrations` (
   `name` varchar(255) NOT NULL,
   `applied` datetime(6) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=16 DEFAULT CHARSET=latin1;
+) ENGINE=InnoDB AUTO_INCREMENT=19 DEFAULT CHARSET=latin1;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -265,7 +291,7 @@ CREATE TABLE `django_migrations` (
 
 LOCK TABLES `django_migrations` WRITE;
 /*!40000 ALTER TABLE `django_migrations` DISABLE KEYS */;
-INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-11-20 18:35:27.910340'),(2,'auth','0001_initial','2016-11-20 18:35:37.078775'),(3,'admin','0001_initial','2016-11-20 18:35:39.202033'),(4,'admin','0002_logentry_remove_auto_add','2016-11-20 18:35:39.391963'),(5,'contenttypes','0002_remove_content_type_name','2016-11-20 18:35:40.554916'),(6,'auth','0002_alter_permission_name_max_length','2016-11-20 18:35:40.667039'),(7,'auth','0003_alter_user_email_max_length','2016-11-20 18:35:40.778996'),(8,'auth','0004_alter_user_username_opts','2016-11-20 18:35:40.820150'),(9,'auth','0005_alter_user_last_login_null','2016-11-20 18:35:41.449907'),(10,'auth','0006_require_contenttypes_0002','2016-11-20 18:35:41.493881'),(11,'auth','0007_alter_validators_add_error_messages','2016-11-20 18:35:41.551373'),(12,'auth','0008_alter_user_username_max_length','2016-11-20 18:35:41.884981'),(13,'sessions','0001_initial','2016-11-20 18:35:42.544609'),(14,'usermanage','0001_initial','2016-11-20 18:35:42.893611'),(15,'usermanage','0002_auto_20161120_1819','2016-11-20 18:35:43.002798');
+INSERT INTO `django_migrations` VALUES (1,'contenttypes','0001_initial','2016-11-20 18:35:27.910340'),(2,'auth','0001_initial','2016-11-20 18:35:37.078775'),(3,'admin','0001_initial','2016-11-20 18:35:39.202033'),(4,'admin','0002_logentry_remove_auto_add','2016-11-20 18:35:39.391963'),(5,'contenttypes','0002_remove_content_type_name','2016-11-20 18:35:40.554916'),(6,'auth','0002_alter_permission_name_max_length','2016-11-20 18:35:40.667039'),(7,'auth','0003_alter_user_email_max_length','2016-11-20 18:35:40.778996'),(8,'auth','0004_alter_user_username_opts','2016-11-20 18:35:40.820150'),(9,'auth','0005_alter_user_last_login_null','2016-11-20 18:35:41.449907'),(10,'auth','0006_require_contenttypes_0002','2016-11-20 18:35:41.493881'),(11,'auth','0007_alter_validators_add_error_messages','2016-11-20 18:35:41.551373'),(12,'auth','0008_alter_user_username_max_length','2016-11-20 18:35:41.884981'),(13,'sessions','0001_initial','2016-11-20 18:35:42.544609'),(14,'usermanage','0001_initial','2016-11-20 18:35:42.893611'),(15,'usermanage','0002_auto_20161120_1819','2016-11-20 18:35:43.002798'),(18,'bar','0001_initial','2016-11-24 04:53:08.243641');
 /*!40000 ALTER TABLE `django_migrations` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -291,7 +317,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('asqvrfrz792m86a1fut1yszqsdm5w9m4','MGRmMzI0MmEzNmZkYTUxNWFmMjZjNjJjYTJjYjRhNDk1NzU0ODQ4Yzp7InVzZXIiOiJhc2RmYXNkZiIsIm1lc3NhZ2UiOiJpbnZhbGlkIHVzZXJuYW1lIG9yIHBhYXdvcmQifQ==','2016-12-05 03:01:02.740991'),('gskumgl9g4423a538cw9ekk9ps1gkq98','ODk2ODdmMjBmYjgxZTRkNTMyM2YzYjNhOGZiYjBkODhlODgwMzY3Yjp7InVzZXIiOiJzYWRmYXNkZiIsIm1lc3NhZ2UiOiJpbnZhbGlkIHVzZXJuYW1lIG9yIHBhYXdvcmQifQ==','2016-12-05 07:08:18.218946'),('r0gsefmdrk8m6ijrjcpkcdxdcj88hv3r','MTRlOTE4YTgxY2U3ZGQ1NjUwN2ViNjU2ZTlmMmUwNmRhY2U4NmYwMjp7InVzZXIiOiJhc2Rmc2RmYXNkZiJ9','2016-12-04 23:51:41.484874'),('wej4y33y695nortwh3p1g2k0ph17fv8l','MDU0MDRmOTU3NjljNmE3ODI1OTZkZGQ0ZGJmOTk4Mzc3YjhmNTRkMTp7InVzZXIiOiIiLCJtZXNzYWdlIjoidXNlcm5hbWUgYWxyZWFkeSB1c2VkIn0=','2016-12-05 07:03:06.366009');
+INSERT INTO `django_session` VALUES ('asqvrfrz792m86a1fut1yszqsdm5w9m4','YWM4NTgzMTliOWRjYzljMjM1NjExOWQxYTA5YjQ3NTQyMmZiOTZkOTp7fQ==','2016-12-08 08:12:38.672265'),('gskumgl9g4423a538cw9ekk9ps1gkq98','ODk2ODdmMjBmYjgxZTRkNTMyM2YzYjNhOGZiYjBkODhlODgwMzY3Yjp7InVzZXIiOiJzYWRmYXNkZiIsIm1lc3NhZ2UiOiJpbnZhbGlkIHVzZXJuYW1lIG9yIHBhYXdvcmQifQ==','2016-12-05 07:08:18.218946'),('r0gsefmdrk8m6ijrjcpkcdxdcj88hv3r','MTRlOTE4YTgxY2U3ZGQ1NjUwN2ViNjU2ZTlmMmUwNmRhY2U4NmYwMjp7InVzZXIiOiJhc2Rmc2RmYXNkZiJ9','2016-12-04 23:51:41.484874'),('wej4y33y695nortwh3p1g2k0ph17fv8l','MDU0MDRmOTU3NjljNmE3ODI1OTZkZGQ0ZGJmOTk4Mzc3YjhmNTRkMTp7InVzZXIiOiIiLCJtZXNzYWdlIjoidXNlcm5hbWUgYWxyZWFkeSB1c2VkIn0=','2016-12-05 07:03:06.366009');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -334,4 +360,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2016-11-21 14:59:30
+-- Dump completed on 2016-11-24 15:16:44

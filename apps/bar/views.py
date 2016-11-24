@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
+from .models import * 
 # Create your views here.
 
 def allpage(request):
@@ -12,3 +13,4 @@ def select(request):
 	url = "Index_page/" + page + ".html"
 	print (url);
 	return render(request,url)
+
