@@ -3,21 +3,21 @@ from django.http import HttpResponse, HttpResponseRedirect
 from apps.usermanage.models import *
 from apps.usermanage.forms import *
 # Create your views here.
-
 #return to homepage.
 def homepage(request):
+	return render(request,'Home_page.html')
+
+def gotologin(request):
 	try:
 		text = request.session['message']
 	except:
 		text = ""
 	print ("\n\n" + text + "\n\n");
-	return render(request,'homepage.html', {"text":text})
-
-	
+	return render(request,'Login_page.html',{"text":text})
 
 #checking user loggin.
 def login(request):
-    
+	print ("call login");
 	if request.method == "POST":  #recive post-value and checking
 		MyLoginForm = LoginForm(request.POST)  #call function if form.py
 		#print ("call login")
@@ -31,7 +31,7 @@ def login(request):
 			a.active = 0
 			a.save()
 			print (request.session['user']+ "\n\n");
-			return render(request,'bar.html')
+			return redirect('/bar/')
 		except:
 			print("\n\ninvalid username or password\n\n");
 
@@ -39,20 +39,33 @@ def login(request):
 	print ("invalid"); # invalid form (null)
 	request.session['message'] = "invalid username or paaword"
 	print (request.session['message']);
-	return homepage(request);
+	return redirect('/gotologin/')
 
 
 
 #user logout
 def logout(request):
-	print("\n\nlogout\n\n");
-	a = customer.objects.get(username = request.session['user'])
-	a.active = 0
-	a.save()
-	return render(request, 'homepage.html')
-
+	try:
+		print("\n\nlogout\n\n");
+		a = customer.objects.get(username = request.session['user'])
+		a.active = 0
+		a.save()
+		request.session.clear()
+		return redirect('/')
+	except:
+		request.session.clear()
+		return redirect('/')
 
 #register 
+
+def gotoregister(request):
+	try:
+		text = request.session['message']
+	except:
+		text = ""
+	print ("\n\n" + text + "\n\n");
+	return render(request,'Register_page.html',{"text":text})
+
 def register(request):
 	if request.method == "POST":
 		form = RegisForm(request.POST)
@@ -82,4 +95,4 @@ def register(request):
 					request.session['message'] = "registration complete"
 		else:
 			request.session['message'] = "please filled all forms"
-	return homepage(request)
+	return redirect('/gotoregister/')

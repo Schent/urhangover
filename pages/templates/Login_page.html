@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+{% block content %}
+{% include 'sidenav.html' %}
+<style>
+	#h1, #openNav{
+		font-family: 'Poiret One', cursive;
+	}
+	p{
+		font-family: 'Lato', sans-serif;
+	}
+	body, html {
+		height: 100%
+	}
+	nav, button, #exit{
+		font-family: 'Prompt', sans-serif;
+		line-height: 4
+	}
+	#form{
+		line-height: 2!important
+	}
+	.bgimg{
+
+	    min-height: 100%;
+	    background-position: center;
+	    background-size: cover;
+	}
+	.bgimg {
+		background-image: url("../static/Image/bg_img/bg3.jpg")
+	}  
+	.w3-sidenav{
+		transition: 0.5s;
+		display: block;
+		width: 0;		
+	} 	
+</style>
+
+
+	<!-- Page Content -->
+	<div class="w3-display-container w3-wide bgimg" id="contain">
+		<div class="w3-container w3-padding-top">
+	  		<span class="w3-opennav w3-xxlarge w3-padding-left w3-text-white" onclick="opennav()" id="openNav">&#9776; MENU</span>
+	  		<span class="w3-opennav w3-xxlarge w3-padding-left" onclick="opennav()" id="hiddenNav">&nbsp</span>
+	  	</div>
+
+		<div class="w3-light-grey w3-container w3-content w3-padding-32 w3-opacity-form" style="width:600px;margin-top:60px" id="form">
+		    <div class="w3-row-padding">
+			    <h1 class="w3-center w3-padding-bottom w3-jumbo" id="h1">Login.</h1>
+			    <h3 class="w3-center w3-padding-bottom " id="h1">{{text}}</h3>
+		<form name = "form" action = "/login/" method = "POST"> {% csrf_token %}
+		    	<p><label>UserName :</label>
+		       	<input class="w3-input-form w3-border w3-round-large" type="text" placeholder="Username" name = "username"></p>
+		       	<p><label>Password :</label>
+		        <input class="w3-input-form w3-border w3-round-large" type="password" placeholder="Password" name = "password"></p>
+		    	<button class="w3-btn w3-xlarge w3-hover-green w3-round" type = "submit" value = "login">ยืนยัน</button>
+		</form>
+		    </div>
+		</div>
+	</div>
+
+
+
+
+
+
+{% endblock %}
+
+
+
+
+
+

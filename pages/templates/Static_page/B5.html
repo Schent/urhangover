@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html>
+<title>Snop</title>
+<head>
+  <!-- html show thai char -->
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+  <meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+  <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+  <!-- w3 css -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="http://www.w3schools.com/lib/w3.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs\/font-awesome/4.6.3/css/font-awesome.min.css">
+  <!-- font -->
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+  <link href="https://fonts.googleapis.com/css?family=Prompt" rel="stylesheet">
+</head>
+
+<style>
+  body {
+    font-family: "Lato", sans-serif;
+    text-color:"w3-white";
+  }
+  h1, h2{
+    font-size: 40px;
+  }
+  p{
+    font-family: 'Prompt', sans-serif;
+    font-size: 20px;
+  }
+  img{
+    border-style: solid;
+    border-color: white;
+    border-width: :30px;
+  }
+  .mySlides {display:none;height:600px}
+  .w3-left, .w3-right, .w3-badge {cursor:pointer}
+  .w3-badge {height:13px;width:13px;padding:0}
+</style>
+
+<body>
+<!-- Page content -->
+<div class="w3-content" style="max-width:2000px;margin-top:0px">
+  <!-- The Band Section -->
+  <div class="w3-light-grey", id="band">
+    <div class=" w3-container w3-content w3-center w3-padding-64" style="max-width:800px">
+      <h1 class="w3-wide">Snop</h1><br>
+      <p class="w3-justify"> Snop ถือเป็นอีกหนึ่งร้านเด็ดร้านดังที่ตั้งเห็นเด่นชัดอยู่ปากทางเข้ารัชดาซอย 4 แถมยังเป็นร้านที่ได้รับความนิยมจากวัยรุ่นมากมาย ตลอดจนเหล่าบรรดาศิลปินคนดังหลายต่อหลายคน ก็มักจะแวะเวียนมาที่นี่อยู่เสมอ สิ่งหนึ่งที่ทำให้ Snop ดูโดดเด่น คือ การตกแต่งส่วนของผับด้วยคอนเซ็ปต์สีส้ม การตกแต่งร้านตั้งแต่ทางเข้าร้านที่จะต้องเดินขึ้นบันไดเลื่อน ส่วนภายในร้านมีการตกแต่งเป็นห้องโล่ง ๆ นอกจากนี้ ยังเพิ่มสีสันสดใสของโต๊ะที่นั่ง และชุดของเด็กเสิร์ฟที่มักเปลี่ยนไปเรื่อย ๆ นับเป็นเสน่ห์อีกอย่างหนึ่งของทางร้าน รวมถึงดีเจเปิดแผ่นและวงดนตรีเล่นสดแบบมันส์ ๆ ที่สับเปลี่ยนกันมาไม่ซ้ำทุกวันอีกด้วย.</p>
+    </div>
+  </div>
+
+  <!-- Image slide Section -->
+  <div class="w3-black" id="tour">
+    <div class="w3-container w3-content w3-padding-32" style="max-width:800px">
+      <h2 class="w3-wide w3-center">Location</h2>
+      <p class="w3-opacity w3-center">enjoy the views!</p><br>
+
+ <div class="w3-content w3-display-container" style="max-width:800px">
+
+ {% load static %}
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_1.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_2.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_3.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_4.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_5.jpg' %}" style="width:100%">
+      <img class="mySlides" src="{% static 'image/barpage/B5/B5_6.jpg' %}" style="width:100%">
+
+      <img class="mySlides" src="B05_9.jpg" style="width:100%">
+      <!-- L&R control slide -->
+      <a class="w3-btn-floating w3-display-left" onclick="plusDivs(-1)">&#10094;</a>
+      <a class="w3-btn-floating w3-display-right" onclick="plusDivs(1)">&#10095;</a>  
+      <div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle" style="width:100%">
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(5)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(7)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(8)"></span>
+        <span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(9)"></span>
+    </div>
+  </div>
+</div>
+<!-- End Page Content -->
+
+<!-- Add Google Maps -->
+<div id="googleMap" style="height:400px;filter:grayscale(30%);-webkit-filter:grayscale(30%);"></div>
+<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAjw5Tys-6POwI_mUj1lOnMx0qVRpxxtww"></script>
+<script>
+var myCenter = new google.maps.LatLng(13.7617166,100.5323731);
+function initialize() {
+    var mapProp = {
+    center: myCenter,
+    zoom: 12,
+    scrollwheel: false,
+    draggable: false,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+};
+var map = new google.maps.Map(document.getElementById("googleMap"),mapProp);
+var marker = new google.maps.Marker({
+    position: myCenter,
+});
+marker.setMap(map);
+}
+google.maps.event.addDomListener(window, 'load', initialize);
+</script>
+
+<!-- Credit Section -->
+<footer class="w3-container w3-padding-16 w3-center w3-pale-green w3-xlarge">
+<!-- link to main page -->
+  <i class="fa fa-map-marker" style="width:30px"></i><a href="test1.html">Go To Main Page</a><br>
+  <p class="w3-medium">Powered by URHangOver</p>
+</footer>
+
+<!-- Slide Image Script -->
+<script>
+  var slideIndex = 1;
+  showDivs(slideIndex);
+
+  function plusDivs(n) {
+    showDivs(slideIndex += n);
+  }
+
+  function currentDiv(n) {
+    showDivs(slideIndex = n);
+  }
+
+  function showDivs(n) {
+    var i;
+    var x = document.getElementsByClassName("mySlides");
+    var dots = document.getElementsByClassName("demo");
+    if (n > x.length) {slideIndex = 1}
+    if (n < 1) {slideIndex = x.length}
+    for (i = 0; i < x.length; i++) {
+       x[i].style.display = "none";
+    }
+    for (i = 0; i < dots.length; i++) {
+        dots[i].className = dots[i].className.replace(" w3-white", "");
+    }
+    x[slideIndex-1].style.display = "block";
+    dots[slideIndex-1].className += " w3-white";
+  }
+</script>
+</body>
+</html>
+

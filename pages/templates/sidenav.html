@@ -1,0 +1,114 @@
+<!-- sidenav -->
+<style>
+	body,h1,h2 ,#openNav{
+		font-family: 'Poiret One', cursive;
+		
+
+	}
+	body, html {
+		height: 100%
+	}
+	nav, p, #exit {
+		font-family: 'Prompt', sans-serif;
+		line-height: 4
+		
+	}
+	.bgimg{
+	    min-height: 100%;
+	    background-position: center;
+	    background-size: cover;
+	}
+	.bgimg {
+		background-image: url("../static/Image/bg_img/bg2.jpg")
+	}
+	.w3-sidenav{
+		transition: 0.5s;
+		display: block;
+		width: 0;		
+	}
+
+
+</style>
+
+
+
+
+	<!-- sideNav -->
+	<nav class="w3-sidenav w3-lightgray w3-card-2 w3-animate-left" id="mySidenav">
+		<!-- close section -->
+	 	<div class="w3-container w3-padding-16">
+	 	    <i onclick="closenav()" class="fa fa-remove w3-closebtn w3-xlarge w3-hover-text-red"></i>
+		</div> 	
+		<!-- user section -->
+	 	<div class="w3-container w3-padding-8" >
+   			<h3 class="w3-wide w3-center"><b>URHangOver</b></h3>
+   			<p class="w3-wide w3-center">Welcome,Guest</p>
+	 	</div>
+	 	<!-- main section -->
+	 	<div class="w3-container w3-padding-16">
+		  	<a href="/"><img src="../static/Image/icon_img/home.png" />&nbsp&nbsp&nbspหน้าหลัก</a>
+
+					
+			{% if request.session.user %}
+			<!-- for logged in user -->
+			<a href="#" ><img src="../static/Image/icon_img/user.png"/>&nbsp&nbsp&nbsp {{request.session.user}}</a>
+		  	<a href="/logout/" ><img src="../static/Image/icon_img/user.png"/>&nbsp&nbsp&nbsp Logout</a>
+			{% else %}
+			<!-- for not logged in user -->
+		  	<a href="/gotologin/" ><img src="../static/Image/icon_img/user.png"/>&nbsp&nbsp&nbspลงชื่อเข้าใช้</a>
+		  	<a href="/gotoregister/" ><img src="../static/Image/icon_img/add.png"/>&nbsp&nbsp&nbspสมัครสมาชิก</a>
+			{% endif %}
+
+		  	<div class="w3-accordion">
+	    		<a onclick="dropdown()"><img src="../static/Image/icon_img/hand.png"/>&nbsp&nbsp&nbspค้นหาร้านที่ใช่<i class="fa fa-caret-down w3-margin-left"></i></a>
+	    		<div class="w3-accordion-content w3-white w3-medium w3-padding-large" id="drop">
+	      			<a href="/bar/"><i class="fa fa-caret-right w3-margin-right"></i>ทั้งหมด</a>
+	      			<a href="/bar/select?page=Huaykwang"><i class="fa fa-caret-right w3-margin-right"></i>เขต ห้วยขวาง</a>
+	      			<a href="../templates/Index_page/Ratchada.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต รัชดา</a>
+	      			<a href="../templates/Index_page/Phanakron.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต พระนคร</a>
+	      			<a href="../templates/Index_page/Silom.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต สีลม</a>
+                    <a href="../templates/Index_page/Ladphrao.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ลาดพร้าว</a>
+                    <a href="../templates/Index_page/Chatuchak.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต จตุจักร</a>
+                    <a href="../templates/Index_page/Bangkaen.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางเขน</a>
+                    <a href="../templates/Index_page/Bangkapi.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางกะปิ</a>
+                    <a href="../templates/Index_page/Watthana.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต วัฒนา</a>
+                    <a href="../templates/Index_page/Phatumwan.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ปทุมวัน</a>
+	    		</div>
+	    	</div>
+    	</div>	
+    	<!-- footer -->
+    	<div class="w3-container w3-margin-top-nav">
+	  		<a href="AboutUS_page.html"><img src="../static/Image/icon_img/star.png"/>&nbsp&nbsp&nbspเกี่ยวกับเรา</a>
+	  	</div>
+	</nav>
+
+
+<script>
+	document.getElementById("contain").style.marginLeft = "17%";
+	document.getElementById("hiddenNav").style.display = "inline-block";
+	document.getElementById("openNav").style.display = "none";
+	function opennav() {
+	  
+	  document.getElementById("mySidenav").style.width = "17%";
+	  document.getElementById("mySidenav").style.display = "block";
+	  document.getElementById("openNav").style.display = "none";
+	  document.getElementById("hiddenNav").style.display = "inline-block";
+	}
+	function closenav() {
+	 document.getElementById("mySidenav").style.width = "0%";
+	  document.getElementById("mySidenav").style.display = "none";
+	  document.getElementById("hiddenNav").style.display = "none";
+	  document.getElementById("openNav").style.display = "inline-block";
+	}	
+	function dropdown() {
+    var x = document.getElementById("drop");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-blue";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-blue", "");
+    }
+}
+</script>

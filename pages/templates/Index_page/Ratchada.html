@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<title>URHangOver</title>
+<head>  
+    <!-- bootstrap & w3 framwork -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../../static/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../../static/css/3-col-portfolio.css">
+    <link rel="stylesheet" href="../../static/css/w3.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- jQuery -->
+    <script src="js/jquery.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <!-- fonts & icon -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Prompt|Poiret+One">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato">
+    <link rel="shortcut icon" href="../../static/Image/icon_img/H.png"/>
+    <!-- html show thai char -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"> 
+    <meta http-equiv="Content-Type" content="text/html; charset=windows-874">
+    <meta http-equiv="Content-Type" content="text/html; charset=tis-620">
+</head>
+<style>
+    body, html {
+        height: 100%
+    }
+    #openNav, h3{
+        font-family: 'Poiret One', cursive;
+    }
+    p{
+        font-family: 'Lato', sans-serif;
+    }
+    nav, button, #exit{
+        font-family: 'Prompt', sans-serif;
+        line-height: 4
+    }
+    h1{
+        font-family: 'Prompt', sans-serif;
+        line-height: 1
+    }
+    img{
+        border:1px solid transparent!important;
+        opacity:0.60;filter:alpha(opacity=60);-webkit-backface-visibility:hidden
+    }
+    img:hover{
+        border:1px solid #ccc!important;
+    }
+</style>
+<body>
+    <!-- sideNav -->
+    <nav class="w3-sidenav w3-white w3-card-2 w3-animate-left" style="width:17%" id="mySidenav">
+        <!-- close section -->
+        <div class="w3-container w3-padding-16">
+            <i onclick="closenav()" class="fa fa-remove w3-closebtn w3-xlarge w3-hover-text-red"></i>
+        </div>  
+        <!-- user section -->
+        <div class="w3-container w3-padding-8">
+            <h3 class="w3-wide w3-center"><b>URHangOver</b></h3>
+            <p class="w3-wide w3-center">Welcome,Guest</p>
+        </div>
+        <!-- main section -->
+        <div class="w3-container w3-padding-16">
+            <a href="../../templates/Home_page.html"><img src="../../static/Image/icon_img/home.png" />&nbsp&nbsp&nbspหน้าหลัก</a>
+            <a href="../../templates/Login_page.html" ><img src="../../static/Image/icon_img/user.png"/>&nbsp&nbsp&nbspลงชื่อเข้าใช้</a>
+            <a href="../../templates/Register_page.html" ><img src="../../static/Image/icon_img/add.png"/>&nbsp&nbsp&nbspสมัครสมาชิก</a>
+            <div class="w3-accordion">
+                <a onclick="dropdown()" href="#" class="w3-green"><img src="../../static/Image/icon_img/hand.png"/>&nbsp&nbsp&nbspค้นหาร้านที่ใช่<i class="fa fa-caret-down w3-margin-left"></i></a>
+                <div class="w3-accordion-content w3-white w3-medium w3-padding-large" id="drop">
+                    <a href="../../templates/Index_page/All.html" ><i class="fa fa-caret-right w3-margin-right"></i>ทั้งหมด</a>
+                    <a href="../../templates/Index_page/Huaykwang.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ห้วยขวาง</a>
+                    <a href="../../templates/Index_page/Ratchada.html" class="w3-blue"><i class="fa fa-caret-right w3-margin-right"></i>เขต รัชดา</a>
+                    <a href="../../templates/Index_page/Phanakron.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต พระนคร</a>
+                    <a href="../../templates/Index_page/Silom.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต สีลม</a>
+                    <a href="../../templates/Index_page/Ladphrao.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ลาดพร้าว</a>
+                    <a href="../../templates/Index_page/Chatuchak.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต จตุจักร</a>
+                    <a href="../../templates/Index_page/Bangkaen.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางเขน</a>
+                    <a href="../../templates/Index_page/Bangkapi.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางกะปิ</a>
+                    <a href="../../templates/Index_page/Watthana.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต วัฒนา</a>
+                    <a href="../../templates/Index_page/Phatumwan.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ปทุมวัน</a>
+                </div>
+            </div>
+        </div>  
+        <!-- footer -->
+        <div class="w3-container w3-margin-top-nav">
+            <a href="AboutUS_page.html"><img src="../../static/Image/icon_img/star.png"/>&nbsp&nbsp&nbspเกี่ยวกับเรา</a>
+        </div>
+    </nav>
+   
+   <!-- Page Content -->
+    <div class="w3-container w3-black w3-padding-bottom-1row" id="contain">
+        <div class="w3-container w3-padding-top">
+            <span class="w3-opennav w3-xxlarge w3-text-white" onclick="opennav()" id="openNav">&#9776; MENU</span>
+            <span class="w3-opennav w3-xxlarge" onclick="opennav()" id="hiddenNav">&nbsp</span>
+        </div>
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+                <h1 class="page-header">ค้นหาร้านที่ใช่<small>&nbsp&nbsp>>&nbsp&nbspรัชดา</small></h1>
+            </div>
+        </div>
+        <!-- /.row -->
+
+        <!-- Row 1 -->
+        <div class="row">
+            <div class="col-md-4 portfolio-item">
+                <a href="#"><img class="img-responsive" src="../../static/Image/bar_img/B5/B5_8.jpg" alt="Snop"></a>
+                <h3><a href="#" class="w3-display-middle w3-xlarge w3-text-white"><b>Snop</b></a></h3>
+            </div>
+        </div>
+        <!-- End Row 1 -->
+</body> 
+<script>
+    document.getElementById("contain").style.marginLeft = "17%"; 
+    document.getElementById("hiddenNav").style.display = "inline-block";
+    document.getElementById("openNav").style.display = "none";
+    function opennav() {
+      document.getElementById("contain").style.marginLeft = "17%";
+      document.getElementById("mySidenav").style.width = "17%";
+      document.getElementById("mySidenav").style.display = "block";
+      document.getElementById("openNav").style.display = "none";
+      document.getElementById("hiddenNav").style.display = "inline-block";
+    }
+    function closenav() {
+      document.getElementById("contain").style.marginLeft = "0%";
+      document.getElementById("mySidenav").style.display = "none";
+      document.getElementById("hiddenNav").style.display = "none";
+      document.getElementById("openNav").style.display = "inline-block";
+    }   
+    function dropdown() {
+    var x = document.getElementById("drop");
+    if (x.className.indexOf("w3-show") == -1) {
+        x.className += " w3-show";
+        x.previousElementSibling.className += " w3-blue";
+    } else {
+        x.className = x.className.replace(" w3-show", "");
+        x.previousElementSibling.className =
+        x.previousElementSibling.className.replace(" w3-blue", "");
+    }
+}
+</script>
+</html>
