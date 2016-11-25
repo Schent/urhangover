@@ -36,9 +36,16 @@
 	  		<span class="w3-opennav w3-xxlarge w3-text-white" onclick="opennav()" id="openNav">&#9776; MENU</span>
 	  		<span class="w3-opennav w3-xxlarge" onclick="opennav()" id="hiddenNav">&nbsp</span>
 		</div>
+        <!-- Page Header -->
+        <div class="row">
+            <div class="col-lg-12">
+		    <h1 class="page-header">{{district}}</h1>
+            </div>
+        </div>
+	
 	<!-- Block -->
 	{% for item in box %}
-	<div class="w3-display-container col-md-4 portfolio-item">
+	<div class="container col-md-4 portfolio-item ">
 		<a href="#"><img class="img-responsive" src="../../static/Image/bar_img/B{{item.id}}/B{{item.id}}_1.jpg" alt="{{item.name}}"></a>
 		<h3><a href="#" class="w3-display-middle w3-xlarge w3-text-white"><b>{{item.name}}</b></a></h3>
 	</div>
