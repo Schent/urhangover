@@ -32,7 +32,7 @@ def login(request):
 			a.active = 0
 			a.save()
 			print (request.session['user']+ "\n\n");
-			return redirect('/bar/')
+			return redirect('/bar/showbar')
 		except:
 			print("\n\ninvalid username or password\n\n");
 
