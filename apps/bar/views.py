@@ -14,3 +14,11 @@ def select(request):
 	print (url);
 	return render(request,url)
 
+def showbar(request):
+	try:
+		district = request.GET['district']
+		box = bar.objects.filter(district = district)
+		print ("\n" + district + "\n")
+	except:
+		box = bar.objects.all()
+	return render(request,'bar_template/showbar.html',{'box':box})

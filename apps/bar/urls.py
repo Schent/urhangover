@@ -6,6 +6,7 @@ app_name = 'bar'
 urlpatterns=[
     url(r'^$', views.allpage, name='allpage'),
     url(r'^select', views.select, name='select'),
+    url(r'^showbar', views.showbar, name='showbar'),
 
 
 ]

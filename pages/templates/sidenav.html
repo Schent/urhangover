@@ -27,7 +27,6 @@
 		width: 0;		
 	}
 
-
 </style>
 
 
@@ -62,34 +61,34 @@
 		  	<div class="w3-accordion">
 	    		<a onclick="dropdown()"><img src="../static/Image/icon_img/hand.png"/>&nbsp&nbsp&nbspค้นหาร้านที่ใช่<i class="fa fa-caret-down w3-margin-left"></i></a>
 	    		<div class="w3-accordion-content w3-white w3-medium w3-padding-large" id="drop">
-	      			<a href="/bar/"><i class="fa fa-caret-right w3-margin-right"></i>ทั้งหมด</a>
-	      			<a href="/bar/select?page=Huaykwang"><i class="fa fa-caret-right w3-margin-right"></i>เขต ห้วยขวาง</a>
-	      			<a href="../templates/Index_page/Ratchada.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต รัชดา</a>
-	      			<a href="../templates/Index_page/Phanakron.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต พระนคร</a>
-	      			<a href="../templates/Index_page/Silom.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต สีลม</a>
-                    <a href="../templates/Index_page/Ladphrao.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ลาดพร้าว</a>
-                    <a href="../templates/Index_page/Chatuchak.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต จตุจักร</a>
-                    <a href="../templates/Index_page/Bangkaen.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางเขน</a>
-                    <a href="../templates/Index_page/Bangkapi.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางกะปิ</a>
-                    <a href="../templates/Index_page/Watthana.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต วัฒนา</a>
-                    <a href="../templates/Index_page/Phatumwan.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ปทุมวัน</a>
+			<a href="/bar/showbar?"><i class="fa fa-caret-right w3-margin-right"></i>ทั้งหมด</a>
+			<a href="/bar/showbar?district=HUAYKWANG"><i class="fa fa-caret-right w3-margin-right"></i>เขต ห้วยขวาง</a>
+			<a href="/bar/showbar?district=RATCHADA"><i class="fa fa-caret-right w3-margin-right"></i>เขต รัชดา</a>
+			<a href="/bar/showbar?district=PHANAKORN"><i class="fa fa-caret-right w3-margin-right"></i>เขต พระนคร</a>
+			<a href="/bar/showbar?district=SILOM"><i class="fa fa-caret-right w3-margin-right"></i>เขต สีลม</a>
+			    <a href="/bar/showbar?district=LADPHRAO"><i class="fa fa-caret-right w3-margin-right"></i>เขต ลาดพร้าว</a>
+			    <a href="../templates/Index_page/Chatuchak.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต จตุจักร</a>
+			    <a href="../templates/Index_page/Bangkaen.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางเขน</a>
+			    <a href="../templates/Index_page/Bangkapi.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต บางกะปิ</a>
+			    <a href="../templates/Index_page/Watthana.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต วัฒนา</a>
+			    <a href="../templates/Index_page/Phatumwan.html"><i class="fa fa-caret-right w3-margin-right"></i>เขต ปทุมวัน</a>
 	    		</div>
 	    	</div>
     	</div>	
     	<!-- footer -->
     	<div class="w3-container w3-margin-top-nav">
-	  		<a href="AboutUS_page.html"><img src="../static/Image/icon_img/star.png"/>&nbsp&nbsp&nbspเกี่ยวกับเรา</a>
+	  		<a href="/bar/showbar"><img src="../static/Image/icon_img/star.png"/>&nbsp&nbsp&nbspเกี่ยวกับเรา</a>
 	  	</div>
 	</nav>
 
 
 <script>
-	document.getElementById("contain").style.marginLeft = "17%";
+	document.getElementById("contain").style.marginLeft = "19%";
 	document.getElementById("hiddenNav").style.display = "inline-block";
 	document.getElementById("openNav").style.display = "none";
 	function opennav() {
 	  
-	  document.getElementById("mySidenav").style.width = "17%";
+	  document.getElementById("mySidenav").style.width = "19%";
 	  document.getElementById("mySidenav").style.display = "block";
 	  document.getElementById("openNav").style.display = "none";
 	  document.getElementById("hiddenNav").style.display = "inline-block";
