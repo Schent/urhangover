@@ -1,3 +1,8 @@
 .DS_Store
 *.sublime-workspace
 *.swp
+apps/bar/__pycache__/
+apps/usermanage/__pycache__/
+urhangover/__pycache__/
+apps/bar/migrations/__pycache__/
+apps/usermanage/migrations/__pycache__/
