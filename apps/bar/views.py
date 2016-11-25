@@ -21,4 +21,6 @@ def showbar(request):
 		print ("\n" + district + "\n")
 	except:
 		box = bar.objects.all()
-	return render(request,'bar_template/showbar.html',{'box':box})
+		district = "OUR PARTNER"
+	c = [1,2,3]
+	return render(request,'bar_template/showbar.html',{'box':box, 'district' : district, 'c':c})
