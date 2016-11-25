@@ -10,6 +10,7 @@ def homepage(request):
 def gotologin(request):
 	try:
 		text = request.session['message']
+		request.session.clear()
 	except:
 		text = ""
 	print ("\n\n" + text + "\n\n");
@@ -61,6 +62,7 @@ def logout(request):
 def gotoregister(request):
 	try:
 		text = request.session['message']
+		request.session.clear()
 	except:
 		text = ""
 	print ("\n\n" + text + "\n\n");
