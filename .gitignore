@@ -6,3 +6,6 @@ apps/usermanage/__pycache__/
 urhangover/__pycache__/
 apps/bar/migrations/__pycache__/
 apps/usermanage/migrations/__pycache__/
+
+apps/ordering/migrations/__pycache__/
+apps/ordering/__pycache__/
