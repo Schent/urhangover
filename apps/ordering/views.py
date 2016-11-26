@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from apps.bar.models import *
+import datetime
 # Create your views here.
 def showpage(request):
 	try:
@@ -12,4 +13,8 @@ def showpage(request):
 		bar_id = ""
 		print (bar_name);
 	item = bar.objects.filter(id = bar_id);
-	return render(request,'ordering/B_01.html',{'item':item})
+	p = package.objects.filter(bar_id = bar_id);
+	d = datetime.datetime.now();
+	print (p)
+	print (d)
+	return render(request,'ordering/B_01.html',{'item':item,'p':p, 'd':d})

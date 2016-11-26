@@ -85,7 +85,7 @@
 					<div class="modal-content">
 						<div class="modal-header">
 							<button type="button" class="close" data-dismiss="modal">×</button>
-							<center><h4 class="modal-title">Booking</h4></center>
+							<center><h4 class="modal-title"> <p>Booking for {{item.0.name}}</p></h4></center>
 						</div>
 						<!-- fix time and choose your promotion -->
 						<div class="modal-body">
@@ -95,7 +95,7 @@
 								<div style="display:inline-block;">
 									<p>Party Size</p>
 									<select>
-										<option value="volvo">1</option>
+										<option selected  value="volvo">1</option>
 										<option value="saab">2</option>
 										<option value="opel">3</option>
 										<option value="audi">4</option>
@@ -120,11 +120,8 @@
 								<!-- Date -->
 								<div class="w3-margin-left" style="display:inline-block;">
 									<center><p>Date</p></center>
-									<select>
-										<option value="volvo">MON</option>
-										<option value="volvo">TUE</option>
-									</select>
-
+									<p style = option>{{d.day}}/{{d.month}}/{{d.year}}</p>
+									<!--
 									<select>
 										<option value="1">1</option>
 										<option value="2">2</option>
@@ -138,19 +135,18 @@
 										<option value="volvo">FEM</option>
 										<option value="volvo">MAR</option>
 									</select>
+									-->
 								</div>
 
 								<!-- Time -->
 								<div class="w3-margin-left" style="display:inline-block;">
 									<center><p>Time</p></center>
 									<select>
-										<option value="volvo">6.00 pm.</option>
-										<option value="volvo">6.30 pm.</option>
+										<option selected value="volvo">6.30 pm.</option>
 										<option value="volvo">7.00 pm.</option>
 										<option value="volvo">7.30 pm.</option>
 										<option value="volvo">8.00 pm.</option>
 										<option value="volvo">8.30 pm.</option>
-										<option value="volvo">9.00 pm.</option>
 									</select>
 								</div>
 							</center>
@@ -158,12 +154,14 @@
 							<!-- table -->
 
 							<table class="table table-bordered">
-								<tr><th>Promotion</th><th>Price</th><th>Select</th></tr>
+								<tr><th>Promotion</th><th>Price (Baht)</th><th>Select</th></tr>
+								{% for i in p %}
 								<tr>
-									<td>Photo1</td>
-									<td>xxx Baht</td>
+									<td>{{i.name}}</td>
+									<td>{{i.price}}</td>
 									<td>
 										<select>
+											<option value="0">0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
 											<option value="3">3</option>
@@ -178,6 +176,7 @@
 										</select>
 									</td>
 								</tr>
+								{% endfor %}
 							</table>
 
 

@@ -2,7 +2,6 @@
 
 from django import forms
 from .models import *
-
 #login form 
 class LoginForm(forms.ModelForm):    
     class Meta:
