@@ -46,8 +46,8 @@
 	<!-- Block -->
 	{% for item in box %}
 	<div class="container col-md-4 portfolio-item ">
-		<a href="#"><img class="img-responsive" src="../../static/Image/bar_img/B{{item.id}}/B{{item.id}}_1.jpg" alt="{{item.name}}"></a>
-		<h3><a href="#" class="w3-display-middle w3-xlarge w3-text-white"><b>{{item.name}}</b></a></h3>
+		<a href="/ordering/showpage?bar_name={{item.name}}&bar_id={{item.id}}"><img class="img-responsive"  style = "height:300px; width:auto;"src="../../static/Image/bar_img/B{{item.id}}/B{{item.id}}_1.jpg" alt="{{item.name}}"></a>
+		<h3><a href="/ordering/showpage?bar_name={{item.name}}&bar_id={{item.id}}" class="w3-display-middle w3-xlarge w3-text-white"><b>{{item.name}}</b></a></h3>
 	</div>
 	{% endfor %}
 {% endblock %}

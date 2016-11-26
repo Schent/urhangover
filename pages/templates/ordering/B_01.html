@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load staticfiles %}
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>urhangover</title>
+
+	<!-- bootstrap & w3 framwork -->
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<link rel="stylesheet" href="{% static 'css/3-col-portfolio.css' %}">
+	<link rel="stylesheet" href="{% static 'css/w3.css' %}">
+	<link rel="stylesheet" href="{% static 'css/static_page.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<!-- font -->
+	<link rel="shortcut icon" href="{% static 'Image/icon_img/H.png' %}">
+	<link href="https://fonts.googleapis.com/css?family=Prompt|Poiret+One" rel="stylesheet">
+</head>
+<body>
+	<!-- Page Content -->
+	<div class="row content" id="tophalf">
+		<!-- MenuNav -->
+		<div class="w3-container w3-padding-top">
+			<span class="w3-opennav w3-xxlarge w3-padding-left w3-text-white" onclick="opennav() " id="openNav">☰ MENU</span>
+		</div>
+
+		<!-- Left_Panel(Picture slide) -->
+		<div class="col-md-7" id="slide">	
+			<div class="col-md-2">
+				<a class="prev w3-btn-floating" onclick="plusDivs(-1)">❮</a>
+			</div>
+			<div class="col-md-8 w3-padding-16"> 
+				<div class="w3-display-container">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_1.jpg">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_2.jpg">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_3.jpg">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_4.jpg">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_5.jpg">
+					<img class="mySlides" style="height:360px; width:540px;" src="{% static 'Image/bar_img' %}/B{{item.0.id}}/B{{item.0.id}}_6.jpg">
+
+					<!-- L&R control slide -->
+					<div class="w3-center w3-section w3-large w3-text-white w3-display-bottommiddle">
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(1)"></span>
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(2)"></span>
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(3)"></span>
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(4)"></span>
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white w3-white" onclick="currentDiv(5)"></span>
+						<span class="w3-badge demo w3-border w3-transparent w3-hover-white" onclick="currentDiv(6)"></span>
+					</div>
+				</div>
+			</div>
+			<div class="col-md-2">
+				<a class="next w3-btn-floating" onclick="plusDivs(+1)">❯</a>
+			</div>
+		</div>
+		<!-- Right_Panel(icon) -->
+		<div class="col-md-3 text-left" id="panel">
+			<h1 class="text-center"><b>{{item.0.name}}</b></h1>
+			<div>
+				<p class="icon-style"><span class="glyphicon glyphicon-time"></span> เวลาให้บริการ: example</p>
+				<p class="icon-style"><span class="glyphicon glyphicon-map-marker"></span>  ที่ตั้งร้าน: {{item.0.district}}</p>
+			</div>
+			<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="booking-btn" data-toggle="modal" data-target="#myModal">จองเลย!</button>
+		</div>
+	</div>
+
+	<!-- Detail -->
+	<div class="container-fluid text-center" id="bottomhalf">
+		<div class="col-md-2"></div>
+		<div class="col-md-8">
+			<p class="w3-justify">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;บากูผับ รัชดาซอย 4 ผับที่ทุกคนเป็นหุ้นส่วนความมัน พบกับดนตรีจากทีม DJ และ MC ชั้นนำ พร้อมกับวงดนตรีสดที่จะมาบรรเลงเพลงเพื่อเขย่าต่อมความมันของคุณเป็นประจำทุกค่ำคืน นอกจากนี้ยังมีโปรโมชั่นสุดคุ้ม และปาร์ตี้เจ๋งๆ เป็นของสมนาคุณแก่ลูกค้าชาวบากูทุกท่านในทุกๆ เดือนอีกด้วย จุดเด่นของร้านนี้ อยู่ที่สไตล์การตกแต่งร้านที่โดดเด่นในเรื่องของสีสัน และความโปร่งสบาย หลังคาสูง ไม่แออัด ถ้าเป็นโซนดริ้งค์และแดนซ์ โต๊ะเก้าอี้ เว้นระยะ พอให้ลูกค้าได้ลุกมาเต้นแบบสบายๆ สำหรับคนที่พาคู่รักมานั่งชิลล์ๆ หรืออยากได้บรรยากาศแบบส่วนตัว ทางร้านก็มีมุมโซฟาสบายๆ ให้เลือกนั่ง แสงไฟภายในร้านโดยรวมไม่จี๊ดจ๊าดมาก แต่คงไว้ซึ่งความคลาสสิก สบายตาด้วยไฟโทนสีเหลือง.</p>
+		</div>
+		<div class="col-md-2"></div>
+
+		<!-- when click book button -->
+		<div class="container">
+			<!-- Modal -->
+			<div class="modal fade" id="myModal" role="dialog">
+				<div class="modal-dialog">
+					<!-- Modal content-->
+					<div class="modal-content">
+						<div class="modal-header">
+							<button type="button" class="close" data-dismiss="modal">×</button>
+							<center><h4 class="modal-title">Booking</h4></center>
+						</div>
+						<!-- fix time and choose your promotion -->
+						<div class="modal-body">
+							<!-- book all thing here!!!! -->
+							<center>
+								<!-- Number of people -->
+								<div style="display:inline-block;">
+									<p>Party Size</p>
+									<select>
+										<option value="volvo">1</option>
+										<option value="saab">2</option>
+										<option value="opel">3</option>
+										<option value="audi">4</option>
+										<option value="volvo">5</option>
+										<option value="saab">6</option>
+										<option value="opel">7</option>
+										<option value="audi">8</option>
+										<option value="volvo">9</option>
+										<option value="saab">10</option>
+										<option value="opel">11</option>
+										<option value="audi">12</option>
+										<option value="volvo">13</option>
+										<option value="saab">14</option>
+										<option value="opel">15</option>
+										<option value="audi">16</option>
+										<option value="volvo">17</option>
+										<option value="saab">18</option>
+										<option value="opel">19</option>
+										<option value="audi">20</option>
+									</select>
+								</div>
+								<!-- Date -->
+								<div class="w3-margin-left" style="display:inline-block;">
+									<center><p>Date</p></center>
+									<select>
+										<option value="volvo">MON</option>
+										<option value="volvo">TUE</option>
+									</select>
+
+									<select>
+										<option value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+									</select>
+
+									<select>
+										<option value="volvo">JAN</option>
+										<option value="volvo">FEM</option>
+										<option value="volvo">MAR</option>
+									</select>
+								</div>
+
+								<!-- Time -->
+								<div class="w3-margin-left" style="display:inline-block;">
+									<center><p>Time</p></center>
+									<select>
+										<option value="volvo">6.00 pm.</option>
+										<option value="volvo">6.30 pm.</option>
+										<option value="volvo">7.00 pm.</option>
+										<option value="volvo">7.30 pm.</option>
+										<option value="volvo">8.00 pm.</option>
+										<option value="volvo">8.30 pm.</option>
+										<option value="volvo">9.00 pm.</option>
+									</select>
+								</div>
+							</center>
+						</div>
+							<!-- table -->
+
+							<table class="table table-bordered">
+								<tr><th>Promotion</th><th>Price</th><th>Select</th></tr>
+								<tr>
+									<td>Photo1</td>
+									<td>xxx Baht</td>
+									<td>
+										<select>
+											<option value="1">1</option>
+											<option value="2">2</option>
+											<option value="3">3</option>
+											<option value="4">4</option>
+											<option value="5">5</option>
+											<option value="6">6</option>
+											<option value="7">7</option>
+											<option value="8">8</option>
+											<option value="8">9</option>
+											<option value="8">10</option>
+										
+										</select>
+									</td>
+								</tr>
+							</table>
+
+
+						<!-- Footer of Comfirm -->
+						<div class="modal-footer">	
+							<button type="button" class="btn btn-default" data-dismiss="modal" style="background:;">Confirm</button>
+						</div>
+					</div>   
+				</div>
+			</div>
+		</div>
+	</div>	  	
+	
+	<script>
+		var slideIndex = 1;
+		showDivs(slideIndex);
+
+		function plusDivs(n) {
+			showDivs(slideIndex += n);
+		}
+
+		function currentDiv(n) {
+			showDivs(slideIndex = n);
+		}
+
+		function showDivs(n) {
+			var i;
+			var x = document.getElementsByClassName("mySlides");
+			var dots = document.getElementsByClassName("demo");
+			if (n > x.length) {slideIndex = 1}
+				if (n < 1) {slideIndex = x.length}
+					for (i = 0; i < x.length; i++) {
+						x[i].style.display = "none";
+					}
+					for (i = 0; i < dots.length; i++) {
+						dots[i].className = dots[i].className.replace(" w3-white", "");
+					}
+					x[slideIndex-1].style.display = "block";
+					dots[slideIndex-1].className += " w3-white";
+				}
+			</script>
+		</body>
+		</html>

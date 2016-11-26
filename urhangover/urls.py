@@ -20,4 +20,5 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('apps.usermanage.urls')),
     url(r'^bar/', include('apps.bar.urls')),
+    url(r'^ordering/', include('apps.ordering.urls')),
 ]

@@ -35,5 +35,4 @@ def showbar(request):
 	except:
 		box = bar.objects.all()
 		district = "OUR PARTNER"
-	c = [1,2,3]
-	return render(request,'bar_template/showbar.html',{'box':box, 'district' : district, 'c':c})
+	return render(request,'bar_template/showbar.html',{'box':box, 'district' : district})

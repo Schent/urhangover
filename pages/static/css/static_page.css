@@ -1,0 +1,77 @@
+
+body, html {
+	font-family: 'Prompt', sans-serif;
+}
+
+h1 {
+	font-family: 'Poiret One', sans-serif;
+	color:white;
+	font-size: 60px;
+	padding-bottom: 30px;
+}
+p {
+	color: black;
+	font-size: 20px;
+}
+
+th , td {
+	text-align: center;
+}
+
+img {
+	width: 100%;
+	border: 1px solid grey;
+	display: none;
+}
+#tophalf {
+	background-color: black;
+	padding-bottom: 30px;
+}
+#bottomhalf {
+	background-color: #D3D3D3;
+	padding-top: 45px;
+	padding-bottom: 45px;
+}
+#slide {
+	
+}
+#panel {
+	padding-top: 10px;
+	padding-bottom: 0px;
+	color: white !important;
+}
+#booking-btn {
+	margin-top: 60px;
+}
+.row.content {
+	height: 500px;
+	height: auto;
+	padding-bottom: 0px;
+}
+.icon-style{ 
+	font-size: 20px;
+	color: white;
+	margin-bottom:20px;
+}
+
+a.prev, a.next{
+	font-size: 50px;
+	margin-top: 200px;
+	border: 2px solid white;
+}
+a.prev {
+	margin-left: 70px;
+}
+a.next {
+	margin-right: 40px;
+}
+
+.mySlides {
+	display:none;
+	height:400px;
+}
+.w3-left, .w3-right, .w3-badge {cursor:pointer;}
+
+.w3-badge {
+	height:13px;width:13px;padding:0;
+}
