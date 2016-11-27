@@ -5,5 +5,6 @@ app_name = 'ordering'
 
 urlpatterns=[
     url(r'^showpage', views.showpage, name='showpage'),
+    url(r'^preorder/', views.preorder, name='preorder'),
 
 ]

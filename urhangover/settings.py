@@ -40,6 +40,7 @@ INSTALLED_APPS = [
     'apps.usermanage',
     'apps.bar',
     'apps.ordering',
+    'apps.bill',
 ]
 
 MIDDLEWARE = [

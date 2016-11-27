@@ -21,4 +21,5 @@ urlpatterns = [
     url(r'^', include('apps.usermanage.urls')),
     url(r'^bar/', include('apps.bar.urls')),
     url(r'^ordering/', include('apps.ordering.urls')),
+    url(r'^bill/', include('apps.bill.urls')),
 ]

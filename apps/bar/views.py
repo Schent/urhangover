@@ -36,3 +36,5 @@ def showbar(request):
 		box = bar.objects.all()
 		district = "OUR PARTNER"
 	return render(request,'bar_template/showbar.html',{'box':box, 'district' : district})
+
+

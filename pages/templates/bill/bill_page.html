@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  	<title>urhangover</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+  	<link rel="stylesheet" href="../static/css/bootstrap.min.css">
+  	<link rel="stylesheet" href="../static/css/Bill.css">
+	<!-- font -->
+	<link rel="shortcut icon" href="../static/Image/icon_img/H.png">
+	<link href="https://fonts.googleapis.com/css?family=Prompt|Poiret+One" rel="stylesheet">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+ 	<style>
+	.bgimg {
+		background-image: url("../static/Image/bg_img/bg1.jpg");
+	}
+  	</style>
+</head>
+<body >
+<div class="container-fluid text-center">
+	<div class="bgimg prop">
+	  	<div class="row content">
+		  	<!-- Left Side of Page -->
+		    <div class="col-md-2 text-center" id="left"></div> 
+		    <!-- Center Content of Page -->
+		    <div class="col-md-8" id="content">
+		      	<div class="text-left"><h1>ใบเสร็จ URHangOver.</h1></div>
+		  		<div class="panel bill panel-default">
+		  			<div class="panel-heading bill text-left"><b>ข้อมูลผ้ใช้บริการ</b></div>
+		 			<div class="panel-body detail text-left">
+		 				<div class="col-md-6">
+							<p>ชื่อ-สกุล ผู้สั่งซื้อ:&nbsp<span>{{top_obj.cust_name}}   {{top_obj.cust_surname}}</span></p>
+							<P>ร้าน:&nbsp<span>{{top_obj.bar.0}}</span></P>
+							<p>วันทีสั่งซื้อ:&nbsp<span>{{top_obj.date}}</span></p>
+		 				</div>
+		 				<div class="col-md-6">
+							<p>Username :&nbsp<span> {{request.session.user}} </span></p> <!-- balance the page -->
+							<P>จำนวนที่นั่งที่สำรอง:&nbsp<span>{{top_obj.party_size}}</span>&nbsp&nbspท่าน</P>
+							<p>เวลาเข้าร้าน:&nbsp<span>{{top_obj.time}}</span></p>
+		 				</div> 	
+		 			</div>
+				</div>
+				<div class="panel bill panel-default">
+		  			<div class="panel-heading bill text-left"><b>รายการโปรโมชั่น</b></div>
+		 			<div class="panel-body">
+					<table class="table table-bordered">
+					    <thead>
+					        <tr>
+					        	<th class="col-md-6">รายการโปรโมชั่น</th>
+					        	<th class="col-md-2">ราคา</th>
+					    	    <th class="col-md-2">จำนวน</th>
+					  	      	<th class="col-md-2">รวม</th>
+					        </tr>
+						</thead>
+					    <tbody>
+
+						{% for item in c %}
+						    <tr>
+							    <td>{{item.package_id.name}}</td>
+							    <td>{{item.package_id.price}}</td>
+							    <td>{{item.amount}}</td>
+							<td>ราคา </td>
+						   </tr>
+						{% endfor %}
+
+
+						</tbody>
+					</table>
+					<p class="conclude_bill text-right">รวมค่าบริการ:&nbsp<span>ราคาตรงนี้</span>&nbsp฿</p>
+		 			</div>
+				</div>
+				<button type="button" class="btn btn-danger btn-lg col-md-4" id="cancel_button">ยกเลิกรายการทั้งหมด</button><button type="button" class="btn btn-success btn-lg col-md-4 " id="success_button">ยืนยันการชำระ</button>
+		    </div>
+		    <!-- Right Side of Page-->
+		    <div class="col-md-2 text-center" id="right"></div>
+		</div>
+	</div>
+</div>
+</body>
+
+</html>
+

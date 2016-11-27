@@ -61,7 +61,7 @@
 		<div class="col-md-3 text-left" id="panel">
 			<h1 class="text-center"><b>{{item.0.name}}</b></h1>
 			<div>
-				<p class="icon-style"><span class="glyphicon glyphicon-time"></span> เวลาให้บริการ: example</p>
+				<p class="icon-style"><span class="glyphicon glyphicon-time"></span> เวลาให้บริการ: 06.00 - 01.00</p>
 				<p class="icon-style"><span class="glyphicon glyphicon-map-marker"></span>  ที่ตั้งร้าน: {{item.0.district}}</p>
 			</div>
 			<button type="button" class="btn btn-block btn-danger btn-lg center-block" id="booking-btn" data-toggle="modal" data-target="#myModal">จองเลย!</button>
@@ -77,6 +77,9 @@
 		<div class="col-md-2"></div>
 
 		<!-- when click book button -->
+	<form name= "form" action="/ordering/preorder/" method="POST" id="order_form">{% csrf_token %}
+		<input name="item" value="{{item.0.id}}" type="hidden">
+		<input name="package" value="{{p.id}}" type="hidden">
 		<div class="container">
 			<!-- Modal -->
 			<div class="modal fade" id="myModal" role="dialog">
@@ -88,39 +91,42 @@
 							<center><h4 class="modal-title"> <p>Booking for {{item.0.name}}</p></h4></center>
 						</div>
 						<!-- fix time and choose your promotion -->
+
+						<!-- form -->
 						<div class="modal-body">
 							<!-- book all thing here!!!! -->
 							<center>
 								<!-- Number of people -->
 								<div style="display:inline-block;">
 									<p>Party Size</p>
-									<select>
-										<option selected  value="volvo">1</option>
-										<option value="saab">2</option>
-										<option value="opel">3</option>
-										<option value="audi">4</option>
-										<option value="volvo">5</option>
-										<option value="saab">6</option>
-										<option value="opel">7</option>
-										<option value="audi">8</option>
-										<option value="volvo">9</option>
-										<option value="saab">10</option>
-										<option value="opel">11</option>
-										<option value="audi">12</option>
-										<option value="volvo">13</option>
-										<option value="saab">14</option>
-										<option value="opel">15</option>
-										<option value="audi">16</option>
-										<option value="volvo">17</option>
-										<option value="saab">18</option>
-										<option value="opel">19</option>
-										<option value="audi">20</option>
+									<select  name="party_size">
+										<option selected  value="1">1</option>
+										<option value="2">2</option>
+										<option value="3">3</option>
+										<option value="4">4</option>
+										<option value="5">5</option>
+										<option value="6">6</option>
+										<option value="7">7</option>
+										<option value="8">8</option>
+										<option value="9">9</option>
+										<option value="10">10</option>
+										<option value="11">11</option>
+										<option value="12">12</option>
+										<option value="13">13</option>
+										<option value="14">14</option>
+										<option value="15">15</option>
+										<option value="16">16</option>
+										<option value="17">17</option>
+										<option value="18">18</option>
+										<option value="19">19</option>
+										<option value="20">20</option>
 									</select>
 								</div>
 								<!-- Date -->
 								<div class="w3-margin-left" style="display:inline-block;">
 									<center><p>Date</p></center>
 									<p style = option>{{d.day}}/{{d.month}}/{{d.year}}</p>
+									<input name="date" value="{{d.day}}/{{d.month}}/{{d.year}}" type="hidden">
 									<!--
 									<select>
 										<option value="1">1</option>
@@ -141,12 +147,12 @@
 								<!-- Time -->
 								<div class="w3-margin-left" style="display:inline-block;">
 									<center><p>Time</p></center>
-									<select>
-										<option selected value="volvo">6.30 pm.</option>
-										<option value="volvo">7.00 pm.</option>
-										<option value="volvo">7.30 pm.</option>
-										<option value="volvo">8.00 pm.</option>
-										<option value="volvo">8.30 pm.</option>
+									<select name="time">
+										<option selected value="6.30 pm.">6.30 pm.</option>
+										<option value="7.00 pm.">7.00 pm.</option>
+										<option value="7.30 pm.">7.30 pm.</option>
+										<option value="8.00 pm.">8.00 pm.</option>
+										<option value="8.30 pm.">8.30 pm.</option>
 									</select>
 								</div>
 							</center>
@@ -160,7 +166,7 @@
 									<td>{{i.name}}</td>
 									<td>{{i.price}}</td>
 									<td>
-										<select>
+										<select name="p_amount">
 											<option value="0">0</option>
 											<option value="1">1</option>
 											<option value="2">2</option>
@@ -170,8 +176,8 @@
 											<option value="6">6</option>
 											<option value="7">7</option>
 											<option value="8">8</option>
-											<option value="8">9</option>
-											<option value="8">10</option>
+											<option value="9">9</option>
+											<option value="10">10</option>
 										
 										</select>
 									</td>
@@ -182,12 +188,13 @@
 
 						<!-- Footer of Comfirm -->
 						<div class="modal-footer">	
-							<button type="button" class="btn btn-default" data-dismiss="modal" style="background:;">Confirm</button>
+							<button type="submit" value = "submit" class="btn btn-default"  style="background:;">Confirm</button>
 						</div>
 					</div>   
 				</div>
 			</div>
 		</div>
+		</form>
 	</div>	  	
 	
 	<script>
