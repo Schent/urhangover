@@ -2,6 +2,7 @@ from django.shortcuts import render, redirect
 from django.http import HttpResponse, HttpResponseRedirect
 from apps.usermanage.models import *
 from apps.usermanage.forms import *
+from django.contrib.auth import authenticate, login
 # Create your views here.
 #return to homepage.
 def homepage(request):
@@ -26,13 +27,20 @@ def login(request):
 			print ("\n\nvalid");
 		try:
 			#get username from databases and set active=1
+			print ("pass");
 			username = request.POST.get('username')
-			request.session['user'] = username
-			a = customer.objects.get(username = username)
-			a.active = 0
-			a.save()
-			print (request.session['user']+ "\n\n");
-			return redirect('/bar/showbar')
+			print ("pass2");
+			password = request.POST.get('password')
+			print ("pass3");
+			a = customer.objects.filter(username = username)
+			print ("\n\n\n" + password );
+			print (a[0].password);
+			print ("pass4")
+			if a[0].password == password :
+				request.session['user'] = username
+				print ("pass5");
+				print (request.session['user']+ "\n\n");
+				return redirect('/bar/showbar')
 		except:
 			print("\n\ninvalid username or password\n\n");
 
@@ -40,7 +48,7 @@ def login(request):
 	print ("invalid"); # invalid form (null)
 	request.session['message'] = "invalid username or paaword"
 	print (request.session['message']);
-	return redirect('/gotologin/')
+	return redirect('/gotologin/');
 
 
 

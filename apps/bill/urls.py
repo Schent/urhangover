@@ -4,6 +4,7 @@ from . import views
 app_name = 'bill'
 
 urlpatterns=[
-    url(r'^', views.bill, name='bill'),
+    url(r'^payment/', views.index, name='index'),
+	url(r'^last/', views.last, name='last'),
 
 ]

@@ -67,7 +67,7 @@ def preorder(request):
 		print (package)
 		print (cust_id)
 		request.session['order_id'] = order_id
-		return redirect('/bill/')
+		return redirect('/bill/payment')
 	except:
 		return redirect('/gotologin/')
 	

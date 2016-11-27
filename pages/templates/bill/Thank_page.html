@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+	{% load static %}
+  	<title>urhangover</title>
+  	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="stylesheet" href="{% static '/css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static '/css/Thank.css' %}">
+	<!-- font -->
+	<link rel="shortcut icon" href="{% static '/Image/icon_img/H.png' %}">
+	<link href="https://fonts.googleapis.com/css?family=Prompt|Poiret+One" rel="stylesheet">
+ 	<style>
+	.bgimg {
+		background-image: url("{% static '/Image/bg_img/bg1.jpg' %}");
+	}
+  	</style>
+</head>
+<body >
+<div class="container-fluid text-center">
+	<div class="bgimg prop">
+	  	<div class="row content">
+		  	<!-- Left Side of Page -->
+		    <div class="col-md-2" id="left"></div> 
+		    <!-- Center Content of Page -->
+		    <div class="col-md-8" id="content">
+		  		<div class="panel bill panel-default">
+		 			<div class="panel-body detail text-center">
+		 				<p>ทำรายการสำเร็จ</p>
+		 				<p class="make-it-small">(คลิกเพื่อกลับไปหน้าหลัก)</p>
+		 			</div>
+				</div>
+				<button type="button" class="btn btn-info btn-lg text-center" id="thank_button" onclick="javascript:location.href='/'">กลับหน้าหลัก</button>
+		    </div>
+		    <!-- Right Side of Page-->
+		    <div class="col-md-2" id="right"></div>
+		</div>
+	</div>
+</div>
+</body>
+</html>
+

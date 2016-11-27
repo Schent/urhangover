@@ -1,0 +1,49 @@
+body {
+	font-family: 'Prompt', sans-serif;
+}
+a:hover {
+	text-decoration: none;
+}
+.container-fluid {
+	background-color: black;
+}
+.bgimg.prop {
+	
+	background-position: center;
+	background-size: cover;
+}
+.row.content {
+	height: 450px;
+	height: auto;
+	padding-bottom: 0px;
+}
+.row {
+	margin-right: 0px !important;
+  	margin-left: 0px !important;
+}
+.table-bordered th {
+	border: 1px solid #ddd!important;
+}	
+.panel {
+	opacity: 0.9;
+}
+.panel.bill, #success_button, h1{
+	margin-left:100px !important;
+	margin-right:100px !important;
+	margin-bottom: 10px !important;
+}
+
+.detail {
+	font-size: 50px;
+}
+.make-it-small {
+	font-size: 20px !important;
+}
+#content {
+	padding-top: 295px;
+	padding-bottom: 280px;
+	height: 100%;
+}
+#thank_button {
+  margin-top: 50px;
+}
