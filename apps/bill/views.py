@@ -15,7 +15,6 @@ def bill(request):
 
 	#cart
 	c = cart.objects.filter(order_id=request.session['order_id'])
-		
 
 
 	return render(request,'bill/bill_page.html',{'top_obj':top_obj, 'c':c})

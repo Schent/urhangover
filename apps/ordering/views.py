@@ -27,7 +27,7 @@ def showpage(request):
 
 def preorder(request):
 	#try get cust_id
-#	try:
+	try:
 		print (request.session['user'])
 		userobj = customer.objects.filter(username = request.session['user'])	
 		cust_id = userobj[0].id 
@@ -68,7 +68,7 @@ def preorder(request):
 		print (cust_id)
 		request.session['order_id'] = order_id
 		return redirect('/bill/')
-#	except:
-#		return redirect('/gotologin/')
+	except:
+		return redirect('/gotologin/')
 	
 

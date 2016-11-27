@@ -12,6 +12,7 @@ h1 {
 p {
 	color: black;
 	font-size: 20px;
+	line-height: 2 !important;	
 }
 
 th , td {
@@ -41,6 +42,7 @@ img {
 	color: white !important;
 }
 #booking-btn {
+	font-family: 'Prompt', sans-serif !important;
 	margin-top: 60px;
 }
 .row.content {
@@ -56,14 +58,14 @@ img {
 
 a.prev, a.next{
 	font-size: 50px;
-	margin-top: 200px;
+	margin-top: 20px;
 	border: 2px solid white;
 }
 a.prev {
-	margin-left: 70px;
+	margin-right: 20px;
 }
 a.next {
-	margin-right: 40px;
+	margin-left: 0px;
 }
 
 .mySlides {
